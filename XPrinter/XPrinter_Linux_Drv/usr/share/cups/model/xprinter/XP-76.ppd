@@ -1,0 +1,510 @@
+*PPD-Adobe:             "4.3"
+*FormatVersion:         "4.3"
+*FileVersion:           "1.2"
+*LanguageVersion:       English
+*LanguageEncoding:      ISOLatin1
+*PCFileName:            "XP-76.ppd"
+*Manufacturer:          "_Xprinter"
+*Product:               "(XP-76)"
+*cupsVersion:           1.1
+*cupsManualCopies:      True
+*cupsModelNumber:       76
+*cupsFilter:            "application/vnd.cups-raster 0 rastertosnailep2-xprinter"
+*ModelName:             "XP-76"
+*ShortNickName:         "XP-76"
+*NickName:              "XP-76"
+*PSVersion:             "(3010.000) 550"
+*LanguageLevel:         "3"
+*ColorDevice:	        False
+*DefaultColorSpace:     Gray
+*FileSystem:            False
+*Throughput:            "1"
+*LandscapeOrientation:  Plus90
+*VariablePaperSize:     True
+*TTRasterizer:          Type42
+*cupsSNMPSupplies:      False
+
+*OpenUI *PageSize/Media Size: PickOne
+*OrderDependency: 10 AnySetup *PageSize
+*DefaultPageSize: X63MMY60MM
+
+*PageSize X63MMY60MM/76(63.5) * 210mm:          "<</PageSize[180 595]/ImagingBBox null>>setpagedevice"
+*PageSize X63MMY70MM/76(63.5) * 297mm:          "<</PageSize[180 842]/ImagingBBox null>>setpagedevice"
+*PageSize X63MMY80MM/76(63.5) * 3276mm:          "<</PageSize[180 9282]/ImagingBBox null>>setpagedevice"
+
+*CloseUI: *PageSize
+
+*OpenUI *PageRegion: PickOne
+*OrderDependency: 10 AnySetup *PageRegion
+*DefaultPageRegion: X63MMY60MM
+
+*PageRegion X63MMY60MM/76(63.5) * 210mm:          "<</PageSize[180 595]/ImagingBBox null>>setpagedevice"
+*PageRegion X63MMY70MM/76(63.5) * 297mm:          "<</PageSize[180 842]/ImagingBBox null>>setpagedevice"
+*PageRegion X63MMY80MM/76(63.5) * 3276mm:          "<</PageSize[180 9282]/ImagingBBox null>>setpagedevice"
+
+*CloseUI: *PageRegion
+
+*DefaultImageableArea: X63MMY60MM
+
+*ImageableArea X63MMY60MM:          "0.0 0.0 180.0 595.0"
+*ImageableArea X63MMY70MM:          "0.0 0.0 180.0 840.0"
+*ImageableArea X63MMY80MM:          "0.0 0.0 180.0 9282.0"
+
+*DefaultPaperDimension: X63MMY60MM
+
+*PaperDimension X63MMY60MM:         "180 595"
+*PaperDimension X63MMY70MM:         "180 840"
+*PaperDimension X63MMY80MM:         "180 9282"
+
+*MaxMediaWidth:  "180"
+*MaxMediaHeight: "9282"
+*HWMargins:      0 0 0 0
+*CustomPageSize True: "pop pop pop <</PageSize[5 -2 roll]/ImagingBBox null>>setpagedevice"
+*ParamCustomPageSize Width: 1 points 1 180.0
+*ParamCustomPageSize Height: 2 points 1 9282.0
+*ParamCustomPageSize WidthOffset: 3 points 0 0
+*ParamCustomPageSize HeightOffset: 4 points 0 0
+*ParamCustomPageSize Orientation: 5 int 0 0
+
+*OpenGroup:Quality/Quality
+*OpenUI *Resolution/Resolution: PickOne
+*DefaultResolution: 168x72dpi
+
+*Resolution 168x72dpi/168x72 DPI:	"<</HWResolution[168 72]/cupsBitsPerColor 8/cupsRowCount 8/cupsRowFeed 0/cupsRowStep 0/cupsColorSpace 3>>setpagedevice"
+*Resolution 84x72dpi/84x72 DPI:	"<</HWResolution[84 72]/cupsBitsPerColor 8/cupsRowCount 8/cupsRowFeed 0/cupsRowStep 0/cupsColorSpace 3>>setpagedevice"
+*CloseUI: *Resolution
+
+*CloseGroup: Quality
+
+*OpenGroup: Effects/Effects
+
+*OpenUI *Brightness/Brightness: PickOne
+*DefaultBrightness: 0
+*Brightness 50: "%%"
+*Brightness 40: "%%"
+*Brightness 30: "%%"
+*Brightness 20: "%%"
+*Brightness 10: "%%"
+*Brightness 0: "%%"
+*Brightness -10: "%%"
+*Brightness -20: "%%"
+*Brightness -30: "%%"
+*Brightness -40: "%%"
+*Brightness -50: "%%"
+*CloseUI: *Brightness
+
+*OpenUI *HalftoneType/Halftone Type: PickOne
+*DefaultHalftoneType: None
+*HalftoneType None/None: ""
+*HalftoneType ErrorDiffusion/Error Diffusion: ""
+*CloseUI: *HalftoneType
+
+*CloseGroup: Effects
+
+
+*OpenGroup: OutputGroup/Output Options
+*OpenUI *BidiPrinting/1. Bidirectional Printing: PickOne
+*DefaultBidiPrinting: 0Bidirectional
+*BidiPrinting 0Bidirectional/Bidirectional: ""
+*BidiPrinting 1Unidirectional/Unidirectional: ""
+*CloseUI: *BidiPrinting
+
+*OpenUI *PageType/2. Page Type: PickOne
+*DefaultPageType: 0Variable
+*PageType 0Variable/Variable Length: ""
+*PageType 1Fixed/Fixed Length: ""
+*CloseUI: *PageType
+
+
+*CloseGroup: OutputGroup
+
+*OpenGroup: CutGroup/Cut Options
+*OpenUI *PageCutType/1. Page Cut Type: PickOne
+*DefaultPageCutType: 0NoCutPage
+*PageCutType 0NoCutPage/No Cut: ""
+*PageCutType 1PartialCutPage/Partial Cut: ""
+*PageCutType 2FullCutPage/Full cut: ""
+*CloseUI: *PageCutType
+
+*OpenUI *DocCutType/2. Document Cut Type: PickOne
+*DefaultDocCutType: 0NoCutDoc
+*DocCutType 0NoCutDoc/No Cut: ""
+*DocCutType 1PartialCutDoc/Partial Cut: ""
+*DocCutType 2FullCutDoc/Full cut: ""
+*CloseUI: *DocCutType
+
+*OpenUI *FeedCutAfterJobEnd/3. Feed Cut After Job End: PickOne
+*DefaultFeedCutAfterJobEnd: 0None
+*FeedCutAfterJobEnd 0None/None: ""
+*FeedCutAfterJobEnd 1Line/1 Line: ""
+*FeedCutAfterJobEnd 2Line/2 Line: ""
+*FeedCutAfterJobEnd 3Line/3 Line: ""
+*FeedCutAfterJobEnd 4Line/4 Line: ""
+*FeedCutAfterJobEnd 5Line/5 Line: ""
+*FeedCutAfterJobEnd 6Line/6 Line: ""
+*FeedCutAfterJobEnd 7Line/7 Line: ""
+*FeedCutAfterJobEnd 8Line/8 Line: ""
+*FeedCutAfterJobEnd 9Line/9 Line: ""
+*FeedCutAfterJobEnd 10Line/10 Line: ""
+*FeedCutAfterJobEnd 11Line/11 Line: ""
+*FeedCutAfterJobEnd 12Line/12 Line: ""
+*FeedCutAfterJobEnd 13Line/13 Line: ""
+*FeedCutAfterJobEnd 14Line/14 Line: ""
+*FeedCutAfterJobEnd 15Line/15 Line: ""
+*CloseUI: *FeedCutAfterJobEnd
+*CloseGroup: CutGroup
+
+*OpenGroup: Buzzer1Group/Buzzer 1 Control
+*OpenUI *Buzzer1Setting/1. Buzzer 1: PickOne
+*DefaultBuzzer1Setting: 0NoUse
+*Buzzer1Setting 0NoUse/No Use: ""
+*Buzzer1Setting 1DocumentTop/Document Top: ""
+*Buzzer1Setting 2DocumentBtm/Document Bottom: ""
+*CloseUI: *Buzzer1Setting
+
+*OpenUI *Buzzer1OnTime/2. Buzzer 1 - On Time: PickOne
+*DefaultBuzzer1OnTime: 1Millis50
+*Buzzer1OnTime 1Millis50/50 milliseconds: ""
+*Buzzer1OnTime 2Millis100/100 milliseconds: ""
+*Buzzer1OnTime 3Millis150/150 milliseconds: ""
+*Buzzer1OnTime 4Millis200/200 milliseconds: ""
+*Buzzer1OnTime 5Millis250/250 milliseconds: ""
+*Buzzer1OnTime 6Millis300/300 milliseconds: ""
+*Buzzer1OnTime 7Millis350/350 milliseconds: ""
+*Buzzer1OnTime 8Millis400/400 milliseconds: ""
+*Buzzer1OnTime 9Millis450/450 milliseconds: ""
+*CloseUI: *Buzzer1OnTime
+
+*OpenUI *Buzzer1Repeat/3. Buzzer 1 - Repeat: PickOne
+*DefaultBuzzer1Repeat: 1Repeat1
+*Buzzer1Repeat 1Repeat1/1: ""
+*Buzzer1Repeat 2Repeat2/2: ""
+*Buzzer1Repeat 3Repeat3/3: ""
+*Buzzer1Repeat 4Repeat4/4: ""
+*Buzzer1Repeat 5Repeat5/5: ""
+*Buzzer1Repeat 6Repeat6/6: ""
+*Buzzer1Repeat 7Repeat7/7: ""
+*Buzzer1Repeat 8Repeat8/8: ""
+*Buzzer1Repeat 9Repeat9/9: ""
+*CloseUI: *Buzzer1Repeat
+*CloseGroup: Buzzer1Group
+
+*OpenGroup: Buzzer2Group/Buzzer 2 Control
+*OpenUI *Buzzer2Setting/1. Buzzer 2: PickOne
+*DefaultBuzzer2Setting: 0NoUse
+*Buzzer2Setting 0NoUse/No Use: ""
+*Buzzer2Setting 1DocumentTop/Document Top: ""
+*Buzzer2Setting 2DocumentBtm/Document Bottom: ""
+*CloseUI: *Buzzer2Setting
+
+*OpenUI *Buzzer2OnTime/2. Buzzer 2 - On Time: PickOne
+*DefaultBuzzer2OnTime: 1Millis50
+*Buzzer2OnTime 1Millis50/50 milliseconds: ""
+*Buzzer2OnTime 2Millis100/100 milliseconds: ""
+*Buzzer2OnTime 3Millis150/150 milliseconds: ""
+*Buzzer2OnTime 4Millis200/200 milliseconds: ""
+*Buzzer2OnTime 5Millis250/250 milliseconds: ""
+*Buzzer2OnTime 6Millis300/300 milliseconds: ""
+*Buzzer2OnTime 7Millis350/350 milliseconds: ""
+*Buzzer2OnTime 8Millis400/400 milliseconds: ""
+*Buzzer2OnTime 9Millis450/450 milliseconds: ""
+*CloseUI: *Buzzer2OnTime
+
+*OpenUI *Buzzer2Repeat/4. Buzzer 2 - Repeat: PickOne
+*DefaultBuzzer2Repeat: 1Repeat1
+*Buzzer2Repeat 1Repeat1/1: ""
+*Buzzer2Repeat 2Repeat2/2: ""
+*Buzzer2Repeat 3Repeat3/3: ""
+*Buzzer2Repeat 4Repeat4/4: ""
+*Buzzer2Repeat 5Repeat5/5: ""
+*Buzzer2Repeat 6Repeat6/6: ""
+*Buzzer2Repeat 7Repeat7/7: ""
+*Buzzer2Repeat 8Repeat8/8: ""
+*Buzzer2Repeat 9Repeat9/9: ""
+*CloseUI: *Buzzer2Repeat
+*CloseGroup: Buzzer2Group
+
+*OpenGroup: CashDrawerGroup/Cash Drawer Control
+*OpenUI *CashDrawerSetting/1. Cash Drawer: PickOne
+*DefaultCashDrawerSetting: 0NotCashDrawer
+*CashDrawerSetting 0NotCashDrawer/Not Cash Drawer: ""
+*CashDrawerSetting 1CashDrawerBeforePrinting/Cash Drawer Before Printing: ""
+*CashDrawerSetting 2CashDrawerAfterPrinting/Cash Drawer After Printing: ""
+*CloseUI: *CashDrawerSetting
+
+*OpenUI *CashDrawerPulseWidth/2. Cash Drawer Pulse Width: PickOne
+*DefaultCashDrawerPulseWidth: 3Millis250
+*CashDrawerPulseWidth 0Millis100/100 milliseconds: ""
+*CashDrawerPulseWidth 1Millis150/150 milliseconds: ""
+*CashDrawerPulseWidth 2Millis200/200 milliseconds: ""
+*CashDrawerPulseWidth 3Millis250/250 milliseconds: ""
+*CashDrawerPulseWidth 4Millis300/300 milliseconds: ""
+*CashDrawerPulseWidth 5Millis350/350 milliseconds: ""
+*CashDrawerPulseWidth 6Millis400/400 milliseconds: ""
+*CashDrawerPulseWidth 7Millis450/450 milliseconds: ""
+*CashDrawerPulseWidth 8Millis500/500 milliseconds: ""
+*CloseUI: *CashDrawerPulseWidth
+*CloseGroup: CashDrawerGroup
+
+*zh_CN.Translation General/基本功能: ""
+*zh_TW.Translation General/基本設定: ""
+
+*zh_CN.Translation PageSize/纸张大小: ""
+*zh_TW.Translation PageSize/纸张大小: ""
+
+*zh_CN.PageSize w2h4/2 x 4 (50.8 mm x 101.6 mm): ""
+*zh_TW.PageSize w2h4/2 x 4 (50.8 mm x 101.6 mm): ""
+
+*zh_CN.PageSize w2h6/2 x 6 (50.80 mm x 152.4 mm): ""
+*zh_TW.PageSize w2h6/2 x 6 (50.80 mm x 152.4 mm): ""
+
+*zh_CN.PageSize w2.8h4/2.8 x 4  (71.12 mm x 101.6 mm): ""
+*zh_TW.PageSize w2.8h4/2.8 x 4  (71.12 mm x 101.6 mm): ""
+
+*zh_CN.PageSize w2.8h6/2.8 x 6 (71.12 mm x 152.4 mm): ""
+*zh_TW.PageSize w2.8h6/2.8 x 6 (71.12 mm x 152.4 mm): ""
+
+*zh_CN.PageSize w3h4/3 x 4 (76.20 mm x 101.6 mm): ""
+*zh_TW.PageSize w3h4/3 x 4 (76.20 mm x 101.6 mm): ""
+
+*zh_CN.PageSize w3h6/3 x 6 (76.20 mm x 152.4 mm): ""
+*zh_TW.PageSize w3h6/3 x 6 (76.20 mm x 152.4 mm): ""
+
+*zh_CN.PageSize w4h4/4 x 4 (101.6 mm x 101.6 mm): ""
+*zh_TW.PageSize w4h4/4 x 4 (101.6 mm x 101.6 mm): ""
+
+*zh_CN.PageSize w4h4/2 x 4 (50.80 mm x 101.6 mm): ""
+*zh_TW.PageSize w4h4/2 x 4 (50.80 mm x 101.6 mm): ""
+
+*zh_CN.PageSize w4h6/4 x 6 (101.6 mm x 152.4 mm): ""
+*zh_TW.PageSize w4h6/4 x 6 (101.6 mm x 152.4 mm): ""
+
+*zh_CN.Collate True/是: ""
+*zh_TW.Collate True/是: ""
+*zh_CN.Collate False/否: ""
+*zh_TW.Collate False/否: ""
+
+
+
+*zh_CN.Translation Resolution/分辨率: ""
+*zh_TW.Translation Resolution/解析度: ""
+*zh_CN.Resolution 203dpi/8.0 每毫米点数 x 8.0 每毫米点数: ""
+*zh_TW.Resolution 203dpi/8.0 每毫米點數 x 8.0 每毫米點數: ""
+*zh_CN.Resolution 300dpi/12.0 每毫米点数 x 12.0 每毫米点数: ""
+*zh_TW.Resolution 300dpi/12.0 每毫米點數 x 12.0 每毫米點數: ""
+
+*zh_CN.Translation Media/纸张设置: ""
+*zh_TW.Translation Media/紙張設定: ""
+*zh_CN.Translation MediaMethod/方式: ""
+*zh_TW.Translation MediaMethod/方式: ""
+*zh_CN.MediaMethod Direct/热敏: ""
+*zh_CN.MediaMethod Normal/使用当前打印机设置: ""
+*zh_CN.MediaMethod Transfer/热转印: ""
+*zh_TW.MediaMethod Direct/直接感熱: ""
+*zh_TW.MediaMethod Normal/使用目前印表機設定: ""
+*zh_TW.MediaMethod Transfer/熱轉印: ""
+
+*zh_CN.Translation PaperType/类型: ""
+*zh_TW.Translation PaperType/類型: ""
+*zh_CN.PaperType Continue/连续: ""
+*zh_TW.PaperType Continue/連續的: ""
+*zh_CN.PaperType LabelGaps/有间距的标签: ""
+*zh_TW.PaperType LabelGaps/間隔式標籤: ""
+*zh_CN.PaperType LabelMark/有标记的标签: ""
+*zh_TW.PaperType LabelMark/黑標式標籤: ""
+*zh_CN.PaperType Normal/使用当前打印机设置: ""
+*zh_TW.PaperType Normal/使用目前印表機設定: ""
+
+*zh_CN.Translation GapsHeight/间距(标记)高度: ""
+*zh_TW.Translation GapsHeight/間距(標記)高度: ""
+
+*zh_CN.GapsHeight 0/0 mm: "%%"
+*zh_TW.GapsHeight 0/0 mm: "%%"
+*zh_CN.GapsHeight 1/1 mm: "%%"
+*zh_TW.GapsHeight 1/1 mm: "%%"
+*zh_CN.GapsHeight 2/2 mm: "%%"
+*zh_TW.GapsHeight 2/2 mm: "%%"
+*zh_CN.GapsHeight 3/3 mm: "%%"
+*zh_TW.GapsHeight 3/3 mm: "%%"
+*zh_CN.GapsHeight 4/4 mm: "%%"
+*zh_TW.GapsHeight 4/4 mm: "%%"
+*zh_CN.GapsHeight 5/5 mm: "%%"
+*zh_TW.GapsHeight 5/5 mm: "%%"
+*zh_CN.GapsHeight 6/6 mm: "%%"
+*zh_TW.GapsHeight 6/6 mm: "%%"
+*zh_CN.GapsHeight 7/7 mm: "%%"
+*zh_TW.GapsHeight 7/7 mm: "%%"
+*zh_CN.GapsHeight 8/8 mm: "%%"
+*zh_TW.GapsHeight 8/8 mm: "%%"
+*zh_CN.GapsHeight 9/9 mm: "%%"
+*zh_TW.GapsHeight 9/9 mm: "%%"
+*zh_CN.GapsHeight 10/10 mm: "%%"
+*zh_TW.GapsHeight 10/10 mm: "%%"
+
+*zh_CN.Translation PostAction/打印后操作: ""
+*zh_TW.Translation PostAction/列印後動作: ""
+*zh_CN.PostAction Cut/裁切: ""
+*zh_CN.PostAction None/无: ""
+*zh_CN.PostAction Normal/使用当前打印机设置: ""
+*zh_CN.PostAction PartialCut/部分剪切: ""
+*zh_CN.PostAction PeelOff/剥去: ""
+*zh_CN.PostAction TearOff/撕去: ""
+*zh_TW.PostAction Cut/裁切: ""
+*zh_TW.PostAction None/無: ""
+*zh_TW.PostAction Normal/使用目前印表機設定: ""
+*zh_TW.PostAction PartialCut/部分裁切: ""
+*zh_TW.PostAction PeelOff/剝落: ""
+*zh_TW.PostAction TearOff/撕開: ""
+
+*zh_CN.Translation Occurrence/发生: ""
+*zh_TW.Translation Occurrence/發生: ""
+*zh_CN.Occurrence Copies/打印相同内容后: ""
+*zh_CN.Occurrence Every/每张打印后: ""
+*zh_CN.Occurrence Job/打印完后: ""
+*zh_CN.Occurrence Specified/指定的间隔之后: ""
+*zh_TW.Occurrence Copies/相同内容列印後: ""
+*zh_TW.Occurrence Every/每張列印後: ""
+*zh_TW.Occurrence Job/列印完後: ""
+*zh_TW.Occurrence Specified/所指定的間隔之後: ""
+
+*zh_CN.Translation Effects/效果: ""
+*zh_TW.Translation Effects/效果: ""
+
+*zh_CN.Translation Brightness/亮度: ""
+*zh_TW.Translation Brightness/亮度: ""
+
+*zh_CN.Translation HalftoneType/半色调: ""
+*zh_TW.Translation HalftoneType/半色調: ""
+*zh_CN.HalftoneType None/无: ""
+*zh_TW.HalftoneType None/無: ""
+*zh_CN.HalftoneType ErrorDiffusion/误差扩散: ""
+*zh_TW.HalftoneType ErrorDiffusion/誤差擴散: ""
+
+*zh_CN.Translation Origin/原点位置: ""
+*zh_TW.Translation Origin/原點位置: ""
+*zh_CN.Origin Default/系统默认: ""
+*zh_CN.Origin Rotation180/旋转180度: ""
+*zh_TW.Origin Default/系統默認: ""
+*zh_TW.Origin Rotation180/旋轉180度: ""
+
+*zh_CN.Translation MirrorImage/镜像: ""
+*zh_TW.Translation MirrorImage/鏡映影像: ""
+*zh_CN.MirrorImage False/否: ""
+*zh_CN.MirrorImage True/是: ""
+
+*zh_CN.Translation NegativeImage/负片图像: ""
+*zh_TW.Translation NegativeImage/反白: ""
+*zh_CN.NegativeImage False/否: ""
+*zh_CN.NegativeImage True/是: ""
+
+*zh_CN.Translation PrinterOptions/打印机选项: ""
+*zh_TW.Translation PrinterOptions/印表機選項: ""
+
+*zh_CN.Translation PrintSpeed/打印速度: ""
+*zh_TW.Translation PrintSpeed/列印速度: ""
+*zh_CN.PrintSpeed 0.25/6.35mm/sec: ""
+*zh_TW.PrintSpeed 0.25/6.35mm/sec: ""
+*zh_CN.PrintSpeed 0.50/12.70mm/sec: ""
+*zh_TW.PrintSpeed 0.50/12.70mm/sec: ""
+*zh_CN.PrintSpeed 0.75/19.50mm/sec: ""
+*zh_TW.PrintSpeed 0.75/19.50mm/sec: ""
+*zh_CN.PrintSpeed 1/25.4 mm/秒: ""
+*zh_TW.PrintSpeed 1/25.4 mm/秒: ""
+*zh_CN.PrintSpeed 2/50.8 mm/秒: ""
+*zh_TW.PrintSpeed 2/50.8 mm/秒: ""
+*zh_CN.PrintSpeed 2/50.80 mm/秒: ""
+*zh_TW.PrintSpeed 2/50.80 mm/秒: ""
+*zh_CN.PrintSpeed 3/76.2 mm/秒: ""
+*zh_TW.PrintSpeed 3/76.2 mm/秒: ""
+*zh_CN.PrintSpeed 3/76.20 mm/秒: ""
+*zh_TW.PrintSpeed 3/76.20 mm/秒: ""
+*zh_CN.PrintSpeed 4/101.60 mm/秒: ""
+*zh_TW.PrintSpeed 4/101.60 mm/秒: ""
+*zh_CN.PrintSpeed 4/101.6 mm/秒: ""
+*zh_TW.PrintSpeed 4/101.6 mm/秒: ""
+*zh_CN.PrintSpeed 5/127.00 mm/秒: ""
+*zh_TW.PrintSpeed 5/127.00 mm/秒: ""
+*zh_CN.PrintSpeed 5/127 mm/秒: ""
+*zh_TW.PrintSpeed 5/127 mm/秒: ""
+*zh_CN.PrintSpeed 6/152.4 mm/秒: ""
+*zh_TW.PrintSpeed 6/152.4 mm/秒: ""
+*zh_CN.PrintSpeed 7/177.8 mm/秒: ""
+*zh_TW.PrintSpeed 7/177.8 mm/秒: ""
+*zh_CN.PrintSpeed 8/203.2 mm/秒: ""
+*zh_TW.PrintSpeed 8/203.2 mm/秒: ""
+*zh_CN.PrintSpeed 9/228.6 mm/秒: ""
+*zh_TW.PrintSpeed 9/228.6 mm/秒: ""
+*zh_CN.PrintSpeed 10/254 mm/秒: ""
+*zh_TW.PrintSpeed 10/254 mm/秒: ""
+*zh_CN.PrintSpeed 11/279.4 mm/秒: ""
+*zh_TW.PrintSpeed 11/279.4 mm/秒: ""
+*zh_CN.PrintSpeed 12/304.8 mm/秒: ""
+*zh_TW.PrintSpeed 12/304.8 mm/秒: ""
+*zh_CN.PrintSpeed Normal/使用当前打印机设置: "%%"
+*zh_TW.PrintSpeed Normal/使用目前印表機設定: "%%"
+
+*zh_CN.Translation Darkness/深度: ""
+*zh_TW.Translation Darkness/明暗度: ""
+
+*zh_CN.Translation GraphicsFormat/图像格式: ""
+*zh_TW.Translation GraphicsFormat/圖形格式: ""
+
+*zh_CN.Translation DirectBuffer/指向缓冲器: ""
+*zh_TW.Translation DirectBuffer/指向緩衝區: ""
+
+*zh_CN.DirectBuffer AUTO/自动: ""
+*zh_TW.DirectBuffer AUTO/自動: ""
+*zh_CN.Translation StoredGraphics/存储的图像: ""
+*zh_TW.Translation StoredGraphics/存儲的圖形: ""
+*zh_CN.StoredGraphics AUTO/自动: ""
+*zh_TW.StoredGraphics AUTO/自動: ""
+
+
+
+*zh_CN.Translation OptionDisplayUnit/度量单位: ""
+*zh_TW.Translation OptionDisplayUnit/度量單位: ""
+*zh_CN.OptionDisplayUnit AUTO/自动: ""
+*zh_CN.OptionDisplayUnit Inch/英寸: ""
+*zh_CN.OptionDisplayUnit MM/毫米: ""
+*zh_TW.OptionDisplayUnit AUTO/自動: ""
+*zh_TW.OptionDisplayUnit Inch/英寸: ""
+*zh_TW.OptionDisplayUnit MM/毫米: ""
+
+*% Generic boilerplate PPD stuff as standard PostScript fonts and so on
+
+*DefaultFont: Courier
+*Font AvantGarde-Book: Standard "(001.006S)" Standard ROM
+*Font AvantGarde-BookOblique: Standard "(001.006S)" Standard ROM
+*Font AvantGarde-Demi: Standard "(001.007S)" Standard ROM
+*Font AvantGarde-DemiOblique: Standard "(001.007S)" Standard ROM
+*Font Bookman-Demi: Standard "(001.004S)" Standard ROM
+*Font Bookman-DemiItalic: Standard "(001.004S)" Standard ROM
+*Font Bookman-Light: Standard "(001.004S)" Standard ROM
+*Font Bookman-LightItalic: Standard "(001.004S)" Standard ROM
+*Font Courier: Standard "(002.004S)" Standard ROM
+*Font Courier-Bold: Standard "(002.004S)" Standard ROM
+*Font Courier-BoldOblique: Standard "(002.004S)" Standard ROM
+*Font Courier-Oblique: Standard "(002.004S)" Standard ROM
+*Font Helvetica: Standard "(001.006S)" Standard ROM
+*Font Helvetica-Bold: Standard "(001.007S)" Standard ROM
+*Font Helvetica-BoldOblique: Standard "(001.007S)" Standard ROM
+*Font Helvetica-Narrow: Standard "(001.006S)" Standard ROM
+*Font Helvetica-Narrow-Bold: Standard "(001.007S)" Standard ROM
+*Font Helvetica-Narrow-BoldOblique: Standard "(001.007S)" Standard ROM
+*Font Helvetica-Narrow-Oblique: Standard "(001.006S)" Standard ROM
+*Font Helvetica-Oblique: Standard "(001.006S)" Standard ROM
+*Font NewCenturySchlbk-Bold: Standard "(001.009S)" Standard ROM
+*Font NewCenturySchlbk-BoldItalic: Standard "(001.007S)" Standard ROM
+*Font NewCenturySchlbk-Italic: Standard "(001.006S)" Standard ROM
+*Font NewCenturySchlbk-Roman: Standard "(001.007S)" Standard ROM
+*Font Palatino-Bold: Standard "(001.005S)" Standard ROM
+*Font Palatino-BoldItalic: Standard "(001.005S)" Standard ROM
+*Font Palatino-Italic: Standard "(001.005S)" Standard ROM
+*Font Palatino-Roman: Standard "(001.005S)" Standard ROM
+*Font Symbol: Special "(001.007S)" Special ROM
+*Font Times-Bold: Standard "(001.007S)" Standard ROM
+*Font Times-BoldItalic: Standard "(001.009S)" Standard ROM
+*Font Times-Italic: Standard "(001.007S)" Standard ROM
+*Font Times-Roman: Standard "(001.007S)" Standard ROM
+*Font ZapfChancery-MediumItalic: Standard "(001.007S)" Standard ROM
+*Font ZapfDingbats: Special "(001.004S)" Standard ROM
