@@ -180,7 +180,7 @@ if snap list lprint 2>/dev/null | grep -q lprint; then
 
     # Verificar interfaces snap conectadas
     info "Interfaces snap de LPrint:"
-    for iface in raw-usb avahi-control cups-control; do
+    for iface in raw-usb avahi-control; do
         if snap connections lprint 2>/dev/null | grep -q "$iface.*lprint"; then
             ok "  $iface: conectado"
         else
@@ -255,7 +255,7 @@ if [ "$CUPS_MODE" = "snap" ]; then
     echo "    sudo snap install lprint"
     echo "    sudo snap connect lprint:raw-usb"
     echo "    sudo snap connect lprint:avahi-control"
-    echo "    sudo snap connect lprint:cups-control"
+    # nota: lprint no tiene plug cups-control
     echo "    sudo snap start lprint.lprint-server"
     echo "    lprint devices                    # detectar la L81"
     echo "    lprint drivers                    # ver drivers ZPL disponibles"

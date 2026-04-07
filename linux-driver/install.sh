@@ -59,7 +59,7 @@ if [ "$CUPS_MODE" = "snap" ]; then
             echo "[2/4] Conectando interfaces..."
             $SUDO snap connect lprint:raw-usb 2>/dev/null || true
             $SUDO snap connect lprint:avahi-control 2>/dev/null || true
-            $SUDO snap connect lprint:cups-control 2>/dev/null || true
+            # nota: lprint no tiene plug cups-control
             echo ""
             echo "[3/4] Iniciando servidor LPrint..."
             $SUDO snap start lprint.lprint-server 2>/dev/null || true

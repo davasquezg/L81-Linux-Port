@@ -111,16 +111,15 @@ LPrint already supports ZPL and TSPL natively. This is the fastest path.
 sudo snap install lprint
 sudo snap connect lprint:raw-usb
 sudo snap connect lprint:avahi-control
-sudo snap connect lprint:cups-control
-
 # Iniciar servidor / Start server
 sudo snap start lprint.lprint-server
 
 # Detectar impresora / Detect printer
 lprint devices
 
-# Agregar con driver ZPL / Add with ZPL driver
-lprint add -d L81 -v 'usb://...' -m zpl_4inch-203dpi-dt
+# Agregar con driver TSPL Rollo (match CMD:XPP,XL) / Add with TSPL Rollo driver
+# La L81 reporta CMD:XPP,XL que coincide con el Rollo X1038
+lprint add -d L81 -v 'usb://YXWL/L81?serial=...' -m tspl_rollo-x1038_203dpi
 
 # Imprimir / Print
 lprint submit -d L81 archivo.png
@@ -128,9 +127,11 @@ lprint submit -d L81 archivo.png
 # Web UI
 # http://localhost:8000
 
-# Si ZPL no funciona, probar TSPL:
-# If ZPL doesn't work, try TSPL:
-lprint add -d L81-tspl -v 'usb://...' -m tspl_4inch-203dpi-dt
+# Alternativos si TSPL Rollo no funciona:
+# Alternatives if TSPL Rollo doesn't work:
+lprint add -d L81-zpl -v 'usb://...' -m zpl_4inch-203dpi-dt
+lprint add -d L81-tspl -v 'usb://...' -m tspl_203dpi
+lprint add -d L81-cpcl -v 'usb://...' -m cpcl-203dpi
 ```
 
 **Opcion B — Prueba rapida con CUPS snap / Quick test with snap CUPS:**

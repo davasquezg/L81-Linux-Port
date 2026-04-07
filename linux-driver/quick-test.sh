@@ -290,7 +290,7 @@ test_lprint() {
         snap install lprint
         snap connect lprint:raw-usb
         snap connect lprint:avahi-control 2>/dev/null || true
-        snap connect lprint:cups-control 2>/dev/null || true
+        # nota: lprint no tiene plug cups-control
         snap start lprint.lprint-server 2>/dev/null || true
         sleep 2
     fi
@@ -299,7 +299,7 @@ test_lprint() {
 
     # Verificar interfaces
     info "Verificando interfaces snap..."
-    for iface in raw-usb avahi-control cups-control; do
+    for iface in raw-usb avahi-control; do
         if snap connections lprint 2>/dev/null | grep -q "$iface.*lprint"; then
             ok "  $iface: conectado"
         else
