@@ -90,7 +90,94 @@ cd L81-Linux-Port/linux-driver
 ./install.sh
 ```
 
-### Instalacion Manual / Manual Install
+El instalador detecta automaticamente si CUPS esta instalado como **snap** o **deb** y ofrece las opciones adecuadas.
+
+The installer automatically detects whether CUPS is installed as **snap** or **deb** and offers the appropriate options.
+
+### CUPS Snap (Ubuntu 23.10+) / Snap CUPS
+
+Ubuntu 23.10+ usa CUPS como snap por defecto. El snap es de solo lectura, asi que no se pueden instalar filtros/PPDs directamente.
+
+Ubuntu 23.10+ uses CUPS as a snap by default. The snap is read-only, so custom filters/PPDs cannot be installed directly.
+
+**Opcion A — LPrint snap (RECOMENDADO / RECOMMENDED):**
+
+LPrint ya soporta ZPL y TSPL de forma nativa. Es la ruta mas rapida.
+
+LPrint already supports ZPL and TSPL natively. This is the fastest path.
+
+```bash
+# Instalar LPrint / Install LPrint
+sudo snap install lprint
+sudo snap connect lprint:raw-usb
+sudo snap connect lprint:avahi-control
+sudo snap connect lprint:cups-control
+
+# Iniciar servidor / Start server
+sudo snap start lprint.lprint-server
+
+# Detectar impresora / Detect printer
+lprint devices
+
+# Agregar con driver ZPL / Add with ZPL driver
+lprint add -d L81 -v 'usb://...' -m zpl_4inch-203dpi-dt
+
+# Imprimir / Print
+lprint submit -d L81 archivo.png
+
+# Web UI
+# http://localhost:8000
+
+# Si ZPL no funciona, probar TSPL:
+# If ZPL doesn't work, try TSPL:
+lprint add -d L81-tspl -v 'usb://...' -m tspl_4inch-203dpi-dt
+```
+
+**Opcion B — Prueba rapida con CUPS snap / Quick test with snap CUPS:**
+
+Es posible usar `lpadmin` del snap con un PPD externo que referencia el `rastertolabel` integrado del snap.
+
+You can use the snap's `lpadmin` with an external PPD that references the snap's built-in `rastertolabel`.
+
+```bash
+cd linux-driver
+sudo bash quick-test.sh
+```
+
+**Opcion C — legacy-printer-app (avanzado / advanced):**
+
+Compilar el filtro y usar legacy-printer-app para exponerlo como una Printer Application IPP.
+
+Compile the filter and use legacy-printer-app to expose it as an IPP Printer Application.
+
+```bash
+cd linux-driver
+make
+sudo make install
+# Luego instalar y configurar legacy-printer-app
+# Then install and configure legacy-printer-app
+```
+
+### Diagnostico / Diagnostics
+
+Antes de instalar, ejecuta el script de diagnostico para verificar tu entorno:
+
+Before installing, run the diagnostic script to check your environment:
+
+```bash
+cd linux-driver
+bash diagnose.sh
+```
+
+Este script detecta:
+- CUPS snap vs deb
+- rastertolabel del sistema
+- LPrint (snap o deb)
+- Impresoras USB conectadas
+- Dependencias de compilacion
+- Colas de impresion configuradas
+
+### Instalacion Manual (CUPS deb) / Manual Install (deb CUPS)
 
 ```bash
 cd linux-driver
@@ -203,6 +290,7 @@ echo "Hello World" | lpr -P L81
 
 ### La impresora no aparece / Printer not showing up
 
+**CUPS deb (clasico):**
 ```bash
 # Verificar que CUPS este corriendo / Check CUPS is running
 systemctl status cups
@@ -215,6 +303,38 @@ lpinfo -v | grep usb
 sudo tail -f /var/log/cups/error_log
 ```
 
+**CUPS snap:**
+```bash
+# Verificar que CUPS snap este corriendo / Check snap CUPS is running
+snap services cups
+
+# Verificar conexion USB / Check USB connection
+lsusb | grep -i print
+snap run cups.lpinfo -v | grep usb
+
+# Ver logs de CUPS snap / View snap CUPS logs
+sudo journalctl -u snap.cups.cupsd -f
+
+# Verificar interfaces snap / Check snap interfaces
+snap connections cups
+snap connections lprint  # si usas LPrint
+```
+
+**LPrint snap:**
+```bash
+# Verificar dispositivos / Check devices
+lprint devices
+
+# Verificar servidor / Check server
+snap services lprint
+
+# Reiniciar servidor / Restart server
+sudo snap restart lprint.lprint-server
+
+# Conectar interfaz USB si no detecta / Connect USB if not detecting
+sudo snap connect lprint:raw-usb
+```
+
 ### Error de compilacion / Build errors
 
 ```bash
@@ -224,6 +344,14 @@ dpkg -l | grep -E "libcups|cups-dev"
 # En caso de error con cupsimage / If cupsimage error
 sudo apt install libcupsimage2-dev
 ```
+
+### CUPS snap no encuentra el filtro / Snap CUPS can't find filter
+
+El snap de CUPS es de solo lectura. No se pueden instalar filtros personalizados directamente.
+Usa LPrint snap o legacy-printer-app en su lugar.
+
+The CUPS snap is read-only. Custom filters cannot be installed directly.
+Use LPrint snap or legacy-printer-app instead.
 
 ### Impresion en blanco / Blank printing
 
@@ -281,9 +409,11 @@ L81-Linux-Port/
 |   |   |-- a81-printer.ppd       PPD para L81/A81
 |   |   |-- a80-printer.ppd       PPD para A80
 |   |   +-- a80h-printer.ppd      PPD para A80H
-|   |-- Makefile                  Sistema de compilacion
-|   |-- install.sh                Instalador
-|   +-- uninstall.sh              Desinstalador
+|   |-- Makefile                  Sistema de compilacion (snap-aware)
+|   |-- install.sh                Instalador (snap + deb)
+|   |-- uninstall.sh              Desinstalador (snap + deb)
+|   |-- diagnose.sh               Diagnostico del entorno
+|   +-- quick-test.sh             Pruebas rapidas sin compilar
 |
 |-- A4Drv_LuckJingleMac_Clean/    Driver macOS original (limpio)
 |   |-- PPDs/                     PPDs originales de macOS
