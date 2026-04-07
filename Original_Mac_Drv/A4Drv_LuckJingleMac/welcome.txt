@@ -1,0 +1,2 @@
+The driver files will be copied to the path: /Library/Printers/A80	
+		

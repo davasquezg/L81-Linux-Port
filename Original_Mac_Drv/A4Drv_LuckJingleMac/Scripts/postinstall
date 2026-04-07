@@ -1,0 +1,4 @@
+#!/bin/bash
+launchctl unload /Library/LaunchDaemons/com.launch.A80.plist
+launchctl load /Library/LaunchDaemons/com.launch.A80.plist
+        

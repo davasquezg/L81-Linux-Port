@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>com.launch.A80</string>
+	<key>Program</key>
+	<string>/Library/Printers/A80/launch/launch-A80-task.sh</string>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>WorkingDirectory</key>
+	<string>/Library/LaunchDaemons/</string>
+	<key>KeepAlive</key>
+	<true/>
+</dict>
+</plist>

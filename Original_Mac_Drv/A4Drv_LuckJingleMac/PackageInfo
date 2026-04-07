@@ -1,0 +1,6 @@
+<pkg-info format-version="2" identifier="com.mygreatcompany.pkg.a80" version="1.1.6" relocatable="false" overwrite-permissions="true" followSymLinks="false" install-location="/" auth="root">
+<payload installKBytes="588" numberOfFiles="20"/>
+<scripts>
+    <postinstall file="./postinstall"/>
+</scripts>
+</pkg-info>
